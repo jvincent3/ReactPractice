@@ -1,2 +1,2 @@
 # ReactPractice
-Going to learn, understand and practice React.js
+Project to learn, understand and practice React.js
