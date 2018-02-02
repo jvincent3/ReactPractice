@@ -1,20 +1,32 @@
 var React = require('react');
 
-class Greeting extends React.Component {
-	edit() {
-		alert('Editing comment');
+
+class CheckBox extends React.Component{
+
+	constructor(props) {
+		super(props);
+		this.state = {checked:true};
+
+		this.handleChecked = this.handleChecked.bind(this);
 	}
-	remove() {
-		alert('Removing comment');
+	handleChecked(){
+		this.setState({checked: !this.state.checked})
 	}
+
   render() {
+  		var msg;
+  		if(this.state.checked){
+  			msg= 'checked'
+  		} else {
+  			msg= 'unchecked'
+  		}
+
     return (<div>
-			    <div>{this.props.children}</div>
-			    <button onClick={this.edit}>Edit</button>
-			    <button onClick={this.remove}>Remove</button>
+			    <input type="checkbox" onChange={this.handleChecked} defaultChecked={this.state.checked} />
+			    <h3>Check box is {msg}</h3>
 			</div>);
     	
   }
 }
 
-module.exports = Greeting;
+module.exports = CheckBox;
