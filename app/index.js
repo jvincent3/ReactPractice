@@ -1,12 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var App = require('./components/comments');
+var App = require('./components/Boards');
 
 
 ReactDOM.render(
-	<div>
-		<App>Title</App>
-	</div>,
+	<App />,
 	document.getElementById('app')
 	);
 
